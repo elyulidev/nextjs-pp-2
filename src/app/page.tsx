@@ -9,7 +9,7 @@ export default function Home() {
 
 	const surpriseMe = () => {
 		const random = Math.floor(Math.random() * reviews.length);
-		console.log(random);
+
 		if (random === index) {
 			aux("next", index + 1);
 		} else setIndex(random);

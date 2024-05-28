@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { Dispatch, SetStateAction } from "react";
 import { FaQuoteRight, FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 type CardProps = {
@@ -27,13 +25,15 @@ const Card = ({
 	return (
 		<article className='max-w-[700px] flex flex-col items-center bg-white p-8 shadow-sm rounded-md'>
 			<header className='relative mb-4 before:h-full before:w-full before:bg-custom-purple before:absolute before:-right-2 before:-top-1 before:rounded-[50%]'>
-				<Image
-					src={image}
-					alt={name}
-					width={150}
-					height={150}
-					className='relative rounded-[50%] bg-cover aspect-square'
-				/>
+				<div
+					className='relative w-[150px] h-[150px] rounded-[50%]'
+					style={{
+						backgroundImage: `url("${image}")`,
+						backgroundRepeat: "no-repeat",
+						backgroundSize: "cover",
+						backgroundPosition: "center",
+					}}
+				></div>
 				<span className='absolute w-10 h-10 top-4 bg-custom-purple rounded-[50%] flex items-center justify-center'>
 					<FaQuoteRight className='text-white' size={20} />
 				</span>
